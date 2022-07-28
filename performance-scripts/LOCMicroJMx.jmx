@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blaze" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.14. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">ec2-54-77-227-5.eu-west-1.compute.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">actlabinnovation.digitalcloudplatform.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy#state=05d4aecf-b171-4a24-a818-414d8663b1b7&amp;session_state=2092c7f7-2046-49ad-ad4e-3f52cddb41d7&amp;code=fae353b2-dc88-457e-8549-63fb250b9b2a.2092c7f7-2046-49ad-ad4e-3f52cddb41d7.05358d3b-0ac3-4882-9361-500125abddaa" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy#state=05d4aecf-b171-4a24-a818-414d8663b1b7&amp;session_state=2092c7f7-2046-49ad-ad4e-3f52cddb41d7&amp;code=fae353b2-dc88-457e-8549-63fb250b9b2a.2092c7f7-2046-49ad-ad4e-3f52cddb41d7.05358d3b-0ac3-4882-9361-500125abddaa</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://ec2-54-77-227-5.eu-west-1.compute.amazonaws.com:8000</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">18126.0</stringProp>
+              <stringProp name="ConstantTimer.delay">9063</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 18126 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-home.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-home.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-contacts.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-contacts.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-stats.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-stats.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/logo-dropbox.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/logo-dropbox.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-power.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-power.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-menu.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-menu.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/demand/getDemandDashboardData" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/demand/getDemandDashboardData</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-close.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-close.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploypython/querySearch" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page&quot;:1,&quot;offset&quot;:10,&quot;q&quot;:&quot;&quot;,&quot;whereClause&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploypython/querySearch</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/ios-search.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/ios-search.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/ios-close-circle.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/ios-close-circle.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeployscoring/oneDemandEmployeesInternal" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:783200}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeployscoring/oneDemandEmployeesInternal</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploypython/querySearch" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page&quot;:1,&quot;offset&quot;:10,&quot;q&quot;:&quot;&quot;,&quot;whereClause&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploypython/querySearch</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDashboardData" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDashboardData</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeployscoring/employeeMatchInternal" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page&quot;:1,&quot;offset&quot;:10,&quot;q&quot;:&quot;&quot;,&quot;whereClause&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeployscoring/employeeMatchInternal</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploypython/querySearch" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page&quot;:1,&quot;offset&quot;:10,&quot;q&quot;:&quot;&quot;,&quot;whereClause&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploypython/querySearch</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeployscoring/oneDemandEmployeesInternal" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:783200}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeployscoring/oneDemandEmployeesInternal</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-mail.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-mail.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-call.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-call.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-person.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-person.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-locate.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-locate.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploy/svg/md-lock.svg" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploy/svg/md-lock.svg</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDashboardData" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDashboardData</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeployscoring/employeeMatchInternal" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page&quot;:1,&quot;offset&quot;:10,&quot;q&quot;:&quot;&quot;,&quot;whereClause&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeployscoring/employeeMatchInternal</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/demand/successReport" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/demand/successReport</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/benchResource/getEmployeeDetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;emailId&quot;:&quot;duhita.devadhia@capgemini.com&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/benchResource/getEmployeeDetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://actlabinnovation.digitalcloudplatform.com/smartdeploymicro/rotation/getMonthwiseRotationCount" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">smartdeploymicro/rotation/getMonthwiseRotationCount</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMUGFqMGxwNmtCaU5jZVlOYVlfanVyRFpMZ2dpejZUZk1OdEYwaS0yaEVNIn0.eyJqdGkiOiIxMDAyMzQxMy04ZDYxLTRmYWUtOGY0ZC1iMWM5ZWUzOGMyZWIiLCJleHAiOjE1OTA0NzMyOTIsIm5iZiI6MCwiaWF0IjoxNTkwNDcyOTkyLCJpc3MiOiJodHRwczovL2VjMi01NC03Ny0yMjctNS5ldS13ZXN0LTEuY29tcHV0ZS5hbWF6b25hd3MuY29tOjgwMDAvYXV0aC9yZWFsbXMvU21hcnQtRGVwbG95IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQzMDRjOTE0LWExZTgtNDQxYi1iYWNmLWRlZTIwZjM3YzAxMSIsInR5cCI6IkJlYXJlciIsImF6cCI6IlNtYXJ0ZGVwbG95dWkiLCJub25jZSI6ImY5MjM0MjcwLTZjZDQtNDQxOC04ZjgxLTczZWJmNGExMWU5NyIsImF1dGhfdGltZSI6MTU5MDQ3Mjk4Niwic2Vzc2lvbl9zdGF0ZSI6IjIwOTJjN2Y3LTIwNDYtNDlhZC1hZDRlLTNmNTJjZGRiNDFkNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJNRyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJEdWhpdGEgRGV2YWRoaWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSIsImdpdmVuX25hbWUiOiJEdWhpdGEiLCJmYW1pbHlfbmFtZSI6IkRldmFkaGlhIiwiZW1haWwiOiJkdWhpdGEuZGV2YWRoaWFAY2FwZ2VtaW5pLmNvbSJ9.m0d70vpJUAGWc7VC1iCmqnMvxR9pb71qPiu3lKssvTN0D91mDNeL8BfoP0IJRYxitqsdaNzAL4Pf1nbvZFGk5mPPtz-8DPpMNFFB6oMyQEhuY3qwVxvoDzW4eK4FB0bfOKvwHptD6tMXBYcBsrxgLWgBx86l8g4WUTDyPaREDCGsl6IOxkU25vwF_puJmW4WMbIUeo33XC9odQjFi6o9UCD85riK60nJRaXDN107xuVtvbaPe9drTaf-yhpmRY3E2u1Y3j30YWqN8_2Ean7kJJLeG9TJmtry6UN9ExNirYNYDfLeXmFMvnq-ubpiVQxgE4-v8znenxrE2DV5lHvTCg</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
